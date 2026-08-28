@@ -1,0 +1,106 @@
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/sft/7B/llama-prompt/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890
+Teacher = LLama Prompt [e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890]
+dev | avg_loss: 2.1184275793650795 | {'exact_match': 0.1, 'rougeL': 16.0942}
+dev | avg_loss: 1.568328373015873 | {'exact_match': 1.1, 'rougeL': 20.085}
+dev | avg_loss: 1.5024181547619047 | {'exact_match': 0.5, 'rougeL': 21.1469}
+dev | avg_loss: 1.488343253968254 | {'exact_match': 0.2, 'rougeL': 21.5774}
+dev | avg_loss: 1.4813988095238095 | {'exact_match': 0.5, 'rougeL': 21.6331}
+dev | avg_loss: 1.478422619047619 | {'exact_match': 0.6, 'rougeL': 22.1722} // 890/
+dev | avg_loss: 1.4769345238095237 | {'exact_match': 0.5, 'rougeL': 21.9461}
+dev | avg_loss: 1.4760664682539681 | {'exact_match': 0.4, 'rougeL': 21.966}
+dev | avg_loss: 1.4763144841269842 | {'exact_match': 0.2, 'rougeL': 22.0344}
+
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/sft/7B/dolly-prompt/e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251218_201354/1424
+Teacher = Dolly Prompt [e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251218_201354/1424]
+dev | avg_loss: 1.8623511904761905 | {'exact_match': 1.2, 'rougeL': 26.3346}
+dev | avg_loss: 1.4502728174603174 | {'exact_match': 1.8, 'rougeL': 23.4717}
+dev | avg_loss: 1.4299975198412698 | {'exact_match': 2.6, 'rougeL': 24.678}
+dev | avg_loss: 1.4212549603174602 | {'exact_match': 2.2, 'rougeL': 24.5976}
+dev | avg_loss: 1.4149305555555556 | {'exact_match': 3.4, 'rougeL': 25.3889}
+dev | avg_loss: 1.4111483134920635 | {'exact_match': 3.2, 'rougeL': 25.4915}
+dev | avg_loss: 1.4089161706349207 | {'exact_match': 4.0, 'rougeL': 26.0323}
+dev | avg_loss: 1.4075520833333333 | {'exact_match': 3.9, 'rougeL': 26.5904}
+dev | avg_loss: 1.4066220238095237 | {'exact_match': 4.4, 'rougeL': 27.1345} // 1424/
+dev | avg_loss: 1.4053819444444444 | {'exact_match': 4.2, 'rougeL': 26.6473}
+dev | avg_loss: 1.4060639880952381 | {'exact_match': 4.7, 'rougeL': 27.1942}
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/sft/1B/dolly-prompt/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_203531/1424
+Student = Dolly prompt
+dev | avg_loss: 1.7537202380952381 | {'exact_match': 0.0, 'rougeL': 7.1728}
+dev | avg_loss: 1.6247519841269842 | {'exact_match': 0.7, 'rougeL': 17.4211}
+dev | avg_loss: 1.6090029761904763 | {'exact_match': 0.6, 'rougeL': 18.5385}
+dev | avg_loss: 1.6019345238095237 | {'exact_match': 1.2, 'rougeL': 19.6794}
+dev | avg_loss: 1.5983382936507937 | {'exact_match': 0.9, 'rougeL': 20.177}
+dev | avg_loss: 1.5959821428571428 | {'exact_match': 0.8, 'rougeL': 20.5011}
+dev | avg_loss: 1.5953621031746033 | {'exact_match': 1.8, 'rougeL': 21.4143}
+dev | avg_loss: 1.5952380952380953 | {'exact_match': 1.6, 'rougeL': 21.2916}
+dev | avg_loss: 1.5947420634920635 | {'exact_match': 1.6, 'rougeL': 21.5304} // 1424
+
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/kd/7-1B/dolly-prompt/0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_115502/1424
+
+Teacher = LLama Prompt [0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890/]
+KD used Prompt = Dolly prompt [/media/drive2/distillation/safety-utility-pg/results/llama2/train/kd/7-1B/dolly-prompt/0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_115502/1424]
+
+dev | avg_loss: 1.7537202380952381 | {'exact_match': 0.0, 'rougeL': 7.3402}
+dev | avg_loss: 1.630828373015873 | {'exact_match': 0.5, 'rougeL': 17.0659}
+dev | avg_loss: 1.617063492063492 | {'exact_match': 1.0, 'rougeL': 18.8458}
+dev | avg_loss: 1.6091269841269842 | {'exact_match': 1.2, 'rougeL': 19.7089}
+dev | avg_loss: 1.6066468253968254 | {'exact_match': 1.8, 'rougeL': 19.9981}
+dev | avg_loss: 1.6045386904761905 | {'exact_match': 1.5, 'rougeL': 20.5795}
+dev | avg_loss: 1.6042906746031746 | {'exact_match': 1.7, 'rougeL': 20.6145}
+dev | avg_loss: 1.6041666666666667 | {'exact_match': 1.4, 'rougeL': 20.9648} // 1424/
+dev | avg_loss: 1.6039186507936507 | {'exact_match': 1.2, 'rougeL': 20.0985}
+
+
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/kd/7-1B/dolly-prompt/0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/sft/7B/dolly-prompt/e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251218_201354/1424/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_065653/1424
+Teacher = Dolly Prompt [0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/sft/7B/dolly-prompt/e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1]
+KD used Prompt = Dolly prompt [/media/drive2/distillation/safety-utility-pg/results/llama2/train/kd/7-1B/dolly-prompt/0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/sft/7B/dolly-prompt/e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251218_201354/1424/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_065653]
+
+dev | avg_loss: 1.7537202380952381 | {'exact_match': 0.0, 'rougeL': 7.1564}
+dev | avg_loss: 1.6331845238095237 | {'exact_match': 1.0, 'rougeL': 17.0358}
+dev | avg_loss: 1.6174355158730158 | {'exact_match': 1.0, 'rougeL': 18.1654}
+dev | avg_loss: 1.6090029761904763 | {'exact_match': 1.7, 'rougeL': 19.8373}
+dev | avg_loss: 1.6063988095238095 | {'exact_match': 1.8, 'rougeL': 19.4846}
+dev | avg_loss: 1.6037946428571428 | {'exact_match': 1.9, 'rougeL': 20.706}
+dev | avg_loss: 1.6026785714285714 | {'exact_match': 2.3, 'rougeL': 20.021}
+dev | avg_loss: 1.6024305555555556 | {'exact_match': 1.9, 'rougeL': 20.6053}
+dev | avg_loss: 1.6024305555555556 | {'exact_match': 2.5, 'rougeL': 20.772} // 1424
+
+
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/kd/7-1B/llama-prompt/0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/sft/7B/dolly-prompt/e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251218_201354/1424/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_091805/1424
+
+Teacher = Dolly Prompt [sft/7B/dolly-prompt/e32-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251218_201354/1424/]
+KD used Prompt = LLama Prompt [e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_091805]
+
+dev | avg_loss: 2.0726686507936507 | {'exact_match': 0.0, 'rougeL': 5.8461}
+dev | avg_loss: 1.8113839285714286 | {'exact_match': 0.3, 'rougeL': 13.0178}
+dev | avg_loss: 1.7677331349206349 | {'exact_match': 0.4, 'rougeL': 13.7825}
+dev | avg_loss: 1.7516121031746033 | {'exact_match': 0.1, 'rougeL': 13.5805}
+dev | avg_loss: 1.7445436507936507 | {'exact_match': 0.0, 'rougeL': 14.5471}
+dev | avg_loss: 1.7389632936507937 | {'exact_match': 0.0, 'rougeL': 14.257}
+dev | avg_loss: 1.7379712301587302 | {'exact_match': 0.3, 'rougeL': 14.5235}
+dev | avg_loss: 1.7377232142857142 | {'exact_match': 0.2, 'rougeL': 14.9108}
+dev | avg_loss: 1.7373511904761905 | {'exact_match': 0.1, 'rougeL': 15.0189} // 1424
+
+
+
+// /media/drive2/distillation/safety-utility-pg/results/llama2/train/kd/7-1B/llama-prompt/0.5/teacher-base/Llama-2-7b-chat-hf/teacher-adapter/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_143148/1068
+
+
+Teacher = LLama Prompt [teacher-adapter/e8-bs4-lr2e-05-G4-N4-NN1-lora-8-16-0.1/20251219_021333/890/]
+KD used Prompt = LLama Prompt [e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20251219_143148]
+
+dev | avg_loss: 2.0726686507936507 | {'exact_match': 0.0, 'rougeL': 5.7902}
+dev | avg_loss: 1.7885664682539681 | {'exact_match': 0.1, 'rougeL': 11.2982}
+dev | avg_loss: 1.7442956349206349 | {'exact_match': 0.3, 'rougeL': 14.1794}
+dev | avg_loss: 1.7260664682539681 | {'exact_match': 0.0, 'rougeL': 14.8657}
+dev | avg_loss: 1.7178819444444444 | {'exact_match': 0.0, 'rougeL': 14.8987}
+dev | avg_loss: 1.7130456349206349 | {'exact_match': 0.1, 'rougeL': 15.0978}
+dev | avg_loss: 1.7104414682539681 | {'exact_match': 0.1, 'rougeL': 16.5078} // 1068
+dev | avg_loss: 1.7095734126984128 | {'exact_match': 0.2, 'rougeL': 15.8938}
+dev | avg_loss: 1.7092013888888888 | {'exact_match': 0.2, 'rougeL': 15.7688}

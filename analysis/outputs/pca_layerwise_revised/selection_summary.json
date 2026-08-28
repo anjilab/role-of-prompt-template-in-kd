@@ -1,0 +1,70 @@
+{
+  "Llama-3.2-3B": {
+    "KD-Chat": {
+      "selected_by": "KD-Chat",
+      "layer": 19,
+      "base_score": 4.184712886810303,
+      "target_score": 3.273250102996826,
+      "abs_delta": 0.9114627838134766
+    },
+    "KD-NonChat": {
+      "selected_by": "KD-NonChat",
+      "layer": 10,
+      "base_score": 3.338618755340576,
+      "target_score": 3.1205687522888184,
+      "abs_delta": 0.2180500030517578
+    },
+    "KD-Chat_vs_base_max": {
+      "layer": 19,
+      "base_score": 4.184712886810303,
+      "model_score": 3.273250102996826,
+      "abs_delta": 0.9114627838134766
+    },
+    "KD-NonChat_vs_base_max": {
+      "layer": 10,
+      "base_score": 3.338618755340576,
+      "model_score": 3.1205687522888184,
+      "abs_delta": 0.2180500030517578
+    },
+    "KD-Mix_vs_base_max": {
+      "layer": 19,
+      "base_score": 4.184712886810303,
+      "model_score": 3.268272876739502,
+      "abs_delta": 0.9164400100708008
+    },
+    "KD-Mix-C0.6_vs_base_max": {
+      "layer": 19,
+      "base_score": 4.184712886810303,
+      "model_score": 3.25943660736084,
+      "abs_delta": 0.9252762794494629
+    }
+  },
+  "Gemma-2-2B": {
+    "KD-Chat": {
+      "selected_by": "KD-Chat",
+      "layer": 25,
+      "base_score": 3.874847412109375,
+      "target_score": 1.8209011554718018,
+      "abs_delta": 2.0539462566375732
+    },
+    "KD-NonChat": {
+      "selected_by": "KD-NonChat",
+      "layer": 4,
+      "base_score": 1.2317099571228027,
+      "target_score": 1.651612639427185,
+      "abs_delta": 0.4199026823043823
+    },
+    "KD-Chat_vs_base_max": {
+      "layer": 25,
+      "base_score": 3.874847412109375,
+      "model_score": 1.8209011554718018,
+      "abs_delta": 2.0539462566375732
+    },
+    "KD-NonChat_vs_base_max": {
+      "layer": 4,
+      "base_score": 1.2317099571228027,
+      "model_score": 1.651612639427185,
+      "abs_delta": 0.4199026823043823
+    }
+  }
+}

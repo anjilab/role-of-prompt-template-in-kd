@@ -1,0 +1,6 @@
+Model,CosSim to Base ↑,Projection Gap ↑
+Base,—,20.3110
+KD-Chat,0.7453,18.4599
+KD-NonChat,0.9758,20.8618
+KD-Mix,0.7676,18.9173
+KD-Mix-C0.6,0.7678,19.0650

@@ -1,0 +1,458 @@
+# Llama 3
+
+
+llama_3_3b_it:
+  model:
+    model_type: llama3
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: llama-3.2-3b-it
+    peft_ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/llama3/eval_main
+    eval_method: base
+    eval_family: 3B
+    eval_technique:
+    prompt_type: llama-prompt
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+llama_3_8b_it:
+  model:
+    model_type: llama3
+    ckpt_name: llama-3.1-8b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.1-8B-Instruct
+    peft_ckpt_name: llama-3.1-8b-it
+    peft_ckpt_path: /media/drive2/models/llama-models/Llama-3.1-8B-Instruct
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/llama3/eval_main
+    eval_method: base
+    eval_family: 8B
+    eval_technique:
+    prompt_type: llama-prompt
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+llama_3_8b_it_sft_dolly_prompt:
+  model:
+    ckpt_name: llama-3.1-8b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.1-8B-Instruct
+    peft_ckpt_name: sft_llama8b-it_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_154218_1068
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/sft/llama8b-it/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_154218/1068
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/llama3/eval_main
+    eval_method: sft
+    eval_family: 8B
+    eval_technique:
+    prompt_type: dolly-prompt
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+llama_3_8b_it_sft_llama_prompt:
+  model:
+    ckpt_name: llama-3.1-8b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.1-8B-Instruct
+    peft_ckpt_name: sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/llama3/eval_main
+    eval_method: sft
+    eval_family: 8B
+    eval_technique:
+    prompt_type: llama-prompt
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+
+
+llama_3_3b_it_kd_dolly_prompt_kd_1_0:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_chat_8-3B_dolly-prompt_kd_1.0_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_154218_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1_20260211_231704_1246
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/dolly-prompt/kd/1.0/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_154218/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1/20260211_231704/1246
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+llama_3_3b_it_kd_llama_prompt_kd_1_0:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_chat_8-3B_llama-prompt_kd_1.0_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1_20260212_042850_1424
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/kd/1.0/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1/20260212_042850/1424
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+llama_3_3b_it_kd_dolly_prompt_rkl_1_0:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_chat_8-3B_dolly-prompt_rkl_1.0_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_154218_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1_20260211_141745_1068
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/dolly-prompt/rkl/1.0/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_154218/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1/20260211_141745/1068
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+llama_3_3b_it_kd_llama_prompt_rkl_1_0:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_chat_8-3B_llama-prompt_rkl_1.0_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1_20260211_184926_712
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/rkl/1.0/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd1.0-lora-8-16-0.1/20260211_184926/712
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+
+llama_3_3b_it_kd_criscross_dolly_prompt_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_chat_8-3B_dolly-prompt_student_criscross_20260406_223602_712
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/dolly-prompt/teacher-criscross-evaluation/kd/0.5/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260406_223602/712
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/llama3/eval_main
+    eval_method: kd
+    eval_family: 8-2B
+    eval_technique: kd_criscross
+    prompt_type: dolly-prompt
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+
+llama_3_3b_it_kd_criscross_llama_prompt_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_chat_8-3B_llama-prompt_student_criscross_20260407_143936_534
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/teacher-criscross-evaluation/kd/0.5/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_154218/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260407_143936/534
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/llama3/eval_main
+    eval_method: kd
+    eval_family: 8-2B
+    eval_technique: kd_criscross
+    prompt_type: llama-prompt
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+lama_3_3b_it_kd_curriculum_0_1_prompt_mix_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_0.5_curriculum_0.1_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260416_124134_890
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/mixing/v2/kd/0.5/curriculum_0.1/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260416_124134/890
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+lama_3_3b_it_kd_curriculum_0_2_prompt_mix_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_0.5_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260216_115557_1246
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/mixing/v2/kd/0.5/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260216_115557/1246
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+lama_3_3b_it_kd_curriculum_0_4_prompt_mix_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_0.5_curriculum_0.4_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260418_022406_890
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/mixing/v2/kd/0.5/curriculum_0.4/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260418_022406/890
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+lama_3_3b_it_kd_curriculum_0_5_prompt_mix_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_0.5_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260215_191116_890
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/mixing/v2/kd/0.5/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260215_191116/890
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+lama_3_3b_it_kd_curriculum_0_6_prompt_mix_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_0.5_curriculum_0.6_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260418_102456_1424
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/mixing/v2/kd/0.5/curriculum_0.6/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260418_102456/1424
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+lama_3_3b_it_kd_curriculum_0_8_prompt_mix_student:
+  model:
+    ckpt_name: llama-3.2-3b-it
+    ckpt_path: /media/drive2/models/llama-models/Llama-3.2-3B-Instruct
+    peft_ckpt_name: kd_0.5_teacher-base_llama-8B_teacher-adapter_sft_llama8b-it_llama-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20251224_204449_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260216_022553_712
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/llama3/train/kd/chat/8-3B/llama-prompt/mixing/v2/kd/0.5/teacher-base/llama-8B/teacher-adapter/sft/llama8b-it/llama-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20251224_204449/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260216_022553/712
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/llama3/eval/run_eval.sh
+
+
+# Gemma models
+
+
+gemma_2_2b_it:
+  model:
+    model_type: gemma2
+    ckpt_name: gemma-2-2b-it
+    ckpt_path: /media/drive2/models/gemma-models/gemma-2-2b-it
+    peft_ckpt_name: gemma-2-2b-it
+    peft_ckpt_path: /media/drive2/models/gemma-models/gemma-2-2b-it
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/gemma2/eval_main
+    eval_method: base
+    eval_family: 2B
+    eval_technique:
+    prompt_type: gemma-prompt
+    eval_script: scripts/gemma/eval/eval_gemma2/run_eval.sh
+
+gemma_2_9b_it:
+  model:
+    model_type: gemma2
+    model_name_or_path: /media/drive2/models/gemma-models/gemma-2-9b-it
+    ckpt_name: gemma-2-9b-it
+    ckpt_path: /media/drive2/models/gemma-models/gemma-2-9b-it
+    peft_ckpt_name: gemma-2-9b-it
+    peft_ckpt_path: /media/drive2/models/gemma-models/gemma-2-9b-it
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/gemma2/eval_main
+    eval_method: base
+    eval_family: 9B
+    eval_technique:
+    prompt_type: gemma-prompt
+    eval_script: scripts/gemma/eval/eval_gemma2/run_eval.sh
+
+gemma_2_9b_it_sft_dolly_prompt:
+  model:
+    ckpt_name: gemma-2-9b-it
+    ckpt_path: /media/drive2/models/gemma-models/gemma-2-9b-it
+    peft_ckpt_name: sft_gemma-2-9B-it_dolly-prompt_e8-bs1-lr2e-05-G16-N4-NN1-lora-8-16-0.1_20251221_124202_712
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/gemma2/train/sft/gemma-2-9B-it/dolly-prompt/e8-bs1-lr2e-05-G16-N4-NN1-lora-8-16-0.1/20251221_124202/712
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/gemma2/eval_main
+    eval_method: sft
+    eval_family: 9B
+    eval_technique:
+    prompt_type: dolly-prompt
+    eval_script: scripts/gemma/eval/eval_gemma2/run_eval.sh
+
+gemma_2_9b_it_sft_gemma_prompt:
+  model:
+    ckpt_name: gemma-2-9b-it
+    ckpt_path: /media/drive2/models/gemma-models/gemma-2-9b-it
+    peft_ckpt_name: sft_gemma-2-9B-it_gemma-prompt_e8-bs1-lr2e-05-G16-N4-NN1-lora-8-16-0.1_20251222_165206_1424
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/gemma2/train/sft/gemma-2-9B-it/gemma-prompt/e8-bs1-lr2e-05-G16-N4-NN1-lora-8-16-0.1/20251222_165206/1424
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/gemma2/eval_main
+    eval_method: sft
+    eval_family: 9B
+    eval_technique:
+    prompt_type: gemma-prompt
+    eval_script: scripts/gemma/eval/eval_gemma2/run_eval.sh
+
+
+
+
+
+
+
+gemma2_2b_it_kd_criscross_dolly_prompt_student:
+  model:
+    ckpt_name: gemma-2-2b-it
+    ckpt_path: /media/drive2/models/gemma-models/gemma-2-2b-it
+    peft_ckpt_name: kd_chat_9-2B_dolly-prompt_teacher-criscross-evaluation_teacher_gemma_student_dolly_1246
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/gemma2/train/kd/chat/9-2B/dolly-prompt/teacher-criscross-evaluation/teacher_gemma_student_dolly/1246
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/gemma/eval/eval_gemma2/run_eval.sh
+
+
+
+gemma2_2b_it_kd_criscross_gemma_prompt_student:
+  model:
+    ckpt_name: gemma-2-2b-it
+    ckpt_path: /media/drive2/models/gemma-models/gemma-2-2b-it
+    peft_ckpt_name: kd_chat_9-2B_gemma-prompt_teacher-criscross-evaluation_teacher_dolly_student_gemma_1246
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/gemma2/train/kd/chat/9-2B/gemma-prompt/teacher-criscross-evaluation/teacher_dolly_student_gemma/1246
+    CUDA_DEVICES: 2,3,4,5
+    eval_script: scripts/gemma/eval/eval_gemma2/run_eval.sh
+
+
+
+qwen_2_7b_it:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-7B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-7B-Instruct
+    peft_ckpt_name: Qwen2.5-7B-Instruct
+    peft_ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-7B-Instruct
+    # CUDA_DEVICES: 2,3,4,5
+    CUDA_DEVICES: 0,1
+    # gpus_per_node: 4
+    gpus_per_node: 2
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: base
+    eval_family: 7B
+    eval_technique:
+    prompt_type: qwen-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+qwen_2_3b_it:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: Qwen2.5-3B-Instruct
+    peft_ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    # CUDA_DEVICES: 2,3,4,5
+    # gpus_per_node: 4
+    CUDA_DEVICES: 0,1
+    gpus_per_node: 2
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: base
+    eval_family: 3B
+    eval_technique:
+    prompt_type: qwen-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+
+qwen_2_7b_it_sft_qwen_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-7B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-7B-Instruct
+    peft_ckpt_name: sft_qwen2.5-7B-it_dolly_qwen-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_065458_1068
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/sft/qwen2.5-7B-it/dolly/qwen-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_065458/1068
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: sft
+    eval_family: 7B
+    eval_technique:
+    prompt_type: qwen-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+qwen_2_7b_it_sft_dolly_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-7B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-7B-Instruct
+    peft_ckpt_name: sft_qwen2.5-7B-it_dolly_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_184644_1246
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/sft/qwen2.5-7B-it/dolly/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_184644/1246
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: sft
+    eval_family: 7B
+    eval_technique:
+    prompt_type: dolly-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+qwen_2_3b_it_sft_qwen_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: sft_qwen2.5-3B-it_dolly_qwen-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_032105_1424
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/sft/qwen2.5-3B-it/dolly/qwen-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_032105/1424
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: sft
+    eval_family: 3B
+    eval_technique:
+    prompt_type: qwen-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+
+qwen_2_3b_it_sft_dolly_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: sft_qwen2.5-3B-it_dolly_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_112846_1068
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/sft/qwen2.5-3B-it/dolly/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_112846/1068
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: sft
+    eval_family: 3B
+    eval_technique:
+    prompt_type: dolly-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+qwen_2_3b_it_kd_qwen_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: kd_chat_7-3B_dolly_qwen-prompt_0.5_teacher-adapter_sft_qwen2.5-7B-it_dolly_qwen-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_065458_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260520_024037_1424
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/kd/chat/7-3B/dolly/qwen-prompt/0.5/teacher-base/qwen2.5-7B-it/teacher-adapter/sft/qwen2.5-7B-it/dolly/qwen-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_065458/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260520_024037/1424
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: kd
+    eval_family: 7-3B
+    eval_technique:
+    prompt_type: qwen-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+
+qwen_2_3b_it_kd_dolly_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: kd_chat_7-3B_dolly_dolly-prompt_0.5_teacher-adapter_sft_qwen2.5-7B-it_dolly_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_184644_1246_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260520_085107_1424
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/kd/chat/7-3B/dolly/dolly-prompt/0.5/teacher-base/qwen2.5-7B-it/teacher-adapter/sft/qwen2.5-7B-it/dolly/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_184644/1246/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260520_085107/1424
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: kd
+    eval_family: 7-3B
+    eval_technique:
+    prompt_type: dolly-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+
+qwen_2_3b_it_rkl_dolly_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: rkl_chat_7-3B_dolly_dolly-prompt_0.5_teacher-base_qwen2.5-7B-it_teacher-adapter_sft_qwen2.5-7B-it_dolly_dolly-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_184644_1246_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260523_194624_534
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/rkl/chat/7-3B/dolly/dolly-prompt/0.5/teacher-base/qwen2.5-7B-it/teacher-adapter/sft/qwen2.5-7B-it/dolly/dolly-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_184644/1246/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260523_194624/534
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: rkl
+    eval_family: 7-3B
+    eval_technique:
+    prompt_type: dolly-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
+
+qwen_2_3b_it_rkl_qwen_prompt_for_dolly:
+  model:
+    model_type: qwen2
+    ckpt_name: Qwen2.5-3B-Instruct
+    ckpt_path: /media/drive2/models/qwen-models/Qwen2.5-3B-Instruct
+    peft_ckpt_name: rkl_chat_7-3B_dolly_qwen-prompt_0.5_teacher-adapter_sft_qwen2.5-7B-it_dolly_qwen-prompt_e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1_20260519_065458_1068_e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1_20260524_133641_1068
+    peft_ckpt_path: /media/drive2/distillation/safety-utility-pg/results/qwen2/train/rkl/chat/7-3B/dolly/qwen-prompt/0.5/teacher-base/qwen2.5-7B-it/teacher-adapter/sft/qwen2.5-7B-it/dolly/qwen-prompt/e8-bs2-lr2e-05-G8-N4-NN1-lora-8-16-0.1/20260519_065458/1068/e8-bs1-lr2e-05-G16-N4-NN1-kd0.5-lora-8-16-0.1/20260524_133641/1068
+    CUDA_DEVICES: 2,3,4,5
+    gpus_per_node: 4
+    save_root: /media/drive2/distillation/safety-utility-pg/results/qwen2/eval_main
+    eval_method: rkl
+    eval_family: 7-3B
+    eval_technique:
+    prompt_type: qwen-prompt
+    eval_script: scripts/qwen2/eval/run_eval.sh
