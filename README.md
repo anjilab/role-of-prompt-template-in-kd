@@ -1,5 +1,26 @@
 # Understanding the Role of Prompt Template in Knowledge Distillation for Safety Alignment
 
+
+Code and experiment pipeline for the paper "Understanding the Role of Prompt Template in Knowledge Distillation for Safety Alignment" (EMNLP 2026, Findings).
+
+
+Authors: Anjila Budathoki, Manish Dhakal, Benjamin M. Ampel, Yi Ding (University of Tennessee, Knoxville, Georgia State University )
+
+# Abstract
+
+Prior research has demonstrated that the choice of prompt template during Supervised Fine-Tuning (SFT) significantly impacts the robustness of safety alignment afterwards. However, the influence of template selection during Knowledge Distillation (KD) from teacher to student remains largely unexplored.
+Thus, we fill this gap by analyzing how different template configurations influence the pre-existing safety alignment of the student.
+We observe a significant degradation of safety alignment present in the aligned base instruct-tuned model. 
+Specifically, we find that utilizing chat templates renders the model more compliant with harmful queries compared to a non-chat template. 
+These findings are consistent across three models: LLaMA, Gemma and Qwen model families and are evaluated across multiple safety benchmarks. We further show that using a non-chat template during distillation better preserves the base student's internal representations, while chat template distillation induces a larger representational shift.
+
+# Research Question
+
+How do chat and non-chat prompt templates affect the preservation of safety-aligned refusal behavior when student models are distilled on benign downstream tasks?
+
+
+## About Respository 
+
 This repository contains training, distillation, utility-evaluation, safety-evaluation, and analysis code for studying how knowledge distillation and prompt formats affect utility and safety behavior in instruction-tuned LLMs.
 
 > **NOTE:** Most of the training and evaluation infrastructure in this codebase is adopted from [MiniLLM](https://github.com/microsoft/LMOps/tree/main/minillm) (Sun et al., 2024). We extend it with safety evaluation pipelines, prompt-format variants (chat vs. non-chat KD), criss-cross and curriculum mixing strategies, and mechanistic analysis tooling.
@@ -144,20 +165,23 @@ For safety evaluation:
 - `cd $BASE_PATH/HarmBench`
 - `pip install -r requirements.txt`
 
-# 2 HarmBench test behaviors CSV at data/behavior_datasets/
+# 2 HarmBench test behaviors CSV 
+- You will get the csv inside HarmBench/data/behavior_datasets/
 
 # 3. Place or generate test cases at:
-#    $BASE_PATH/data/harm_bench/test_cases/test_cases.json
-#    (HarmBench's attack scripts generate this; or use the pre-generated ones from the repo)
+- $BASE_PATH/data/harm_bench/test_cases/test_cases.json  (HarmBench's attack scripts generate this; or use the pre-generated ones from the repo)
 
 
 For <b> SORRYBench: </b>
 # 1. Clone SorryBench next to this repo
+
 - `git clone https://github.com/sorry-bench/sorry-bench $BASE_PATH/sorry-bench`
 - `cd $BASE_PATH/sorry-bench`
 - `pip install -r requirements.txt`
 
-# 2. Data are at:  $BASE_PATH/data/sorry_bench/question.jsonl
+# 2. Data are at:  
+
+$BASE_PATH/data/sorry_bench/question.jsonl
 
 After setup you can run:
 
@@ -177,3 +201,16 @@ Generated figures and summaries are stored under `analysis/outputs/`, including 
 
 See `analysis/README.md` for a detailed analysis guide. Some script names in that guide refer to earlier prototype filenames, so check the actual files in `analysis/` before running.
 
+## Acknowledgements
+
+
+We thank the MiniLLM team for open-sourcing their code.
+
+```bibtex
+@inproceedings{minillm,
+  title={MiniLLM: Knowledge Distillation of Large Language Models},
+  author={Gu, Yuxian and Dong, Li and Wei, Furu and Huang, Minlie},
+  booktitle={Proceedings of ICLR},
+  year={2024}
+}
+```
